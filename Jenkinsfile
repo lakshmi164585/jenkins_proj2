@@ -13,14 +13,21 @@ pipeline {
               }
           stage ("chekout from SCM") {
               steps {
-                git branch 'main' , credentialsId: 'github' , url: ''
+                  git branch 'main' , credentialsId: 'github' , url: 'https://github.com/lakshmi164585/jenkins_proj2'
               }
          stage ("Build application") {
               steps {
-                cleanws {
+                sh "mvn clean package " 
                     
                 }
               }
           }
      }
+         stage ("Test application") {
+              steps {
+                sh "mvn test"   
+
+}
+     }
+}
 }
