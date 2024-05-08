@@ -7,8 +7,7 @@ pipeline {
      stages{
           stage ("cleanup workspace") {
               steps {
-                cleanws {
-
+                cleanws()
                 }
               }
           stage ("chekout from SCM") {
@@ -22,12 +21,11 @@ pipeline {
                     
                 }
               }
-          }
-     }
          stage ("Test application") {
               steps {
                 sh "mvn test"   
-
 }
      }
+     }
 }
+
