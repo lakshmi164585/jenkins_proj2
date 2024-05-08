@@ -5,12 +5,12 @@ pipeline {
         maven 'maven3'
     }
      stages{
-          stage ("cleanup workspace") {
-              steps {
-                cleanws()
+        stage ("cleanup workspace") {
+               steps {
+               cleanws()
                 }
               }
-          stage ("chekout from SCM") {
+        stage ("chekout from SCM") {
               steps {
                   git branch 'main' , credentialsId: 'github' , url: 'https://github.com/lakshmi164585/jenkins_proj2'
               }
