@@ -15,6 +15,7 @@ pipeline {
               steps {
                   git branch 'main' , credentialsId: 'github' , url: 'https://github.com/lakshmi164585/jenkins_proj2'
               }
+          }
          stage ("Build application") {
               steps {
                 sh "mvn clean package " 
